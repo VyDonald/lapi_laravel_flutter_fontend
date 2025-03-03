@@ -28,6 +28,7 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::middleware('auth:sanctum')->post('/logout', [AuthController::class, 'logout']);
 Route::middleware('auth:sanctum')->get('/user', [AuthController::class, 'user']);
 
+//sanctum por l'auth
 Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('contacts', ContactController::class);
     Route::get('/groupes', [GroupeController::class, 'index']);
